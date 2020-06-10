@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	 <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+	<div id="quickSetupModel" style="display: none;">
+		<div class="message">
+			Select Cell:
+			<span class="key">Receptor</span>
+			<hr/>
+			<a class="large_btn end_quick_setup">End Setup</a>
+		</div>
+	</div>
+	<div class="editor_area">
+		<div class="image_container">
+			<img class="image-dummy" style="display:none;"/>
+			<div class="image">
+			</div>
+		</div>
+		<div class="editor">
+			<a class="large_btn load_image">Load Image</a>
+			<input id="image-input" type="file" style="display: none;" />
+			<a class="large_btn load_json">Load JSON</a>
+			<a class="large_btn export_json">Export JSON</a>
+			<div class="export_area" style="display:none;">
+				<hr>
+				<textarea class="export_field" readonly="readonly"></textarea>
+			</div>
+			<hr>
+			<span>Name:</span><br>
+			<input class="noteskin-name full" type="text" value="" autocomplete="off" />
+			<span>Grid Width:</span><input class="grid-width" type="number" value="5"  min="1" max="20" autocomplete="off" title="How many cells for the width"/><br/>
+			<span>Grid Height:</span><input class="grid-height" type="number" value="2" min="1" max="20" autocomplete="off" title="How many cells for the height" /><br/>
+			<span>Note Rotation:</span><input class="global-rotation" type="number" value="90" min="0" max="360" autocomplete="off" title="A value of 90 will rotation all directions 90 evenly, for noteskins like beatmania, a value of 0 should be used instead.&#10;&#10;Values:&#10;L: rotation * 1&#10;D: 0&#10;U: rotation * 2&#10;R: rotation * -1"/><br/>
+			<hr>
+			<a class="large_btn toggle_advance">Toggle Advance Mode</a>
+			<div id="color_selector">
+				<!-- Filled in JS -->
+				<a class="large_btn toggle_quick_setup">Quick Setup</a>
+			</div>
+			<div id="color_selector_full" style="display:none;"><!-- Filled in JS --></div>
+		</div>
+	</div>
+</body>
+</html>

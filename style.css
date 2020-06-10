@@ -1,0 +1,149 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	height: 100vh;
+	margin: 0;
+}
+body {
+	font-family: Tahoma, "Trebuchet MS", Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 15px;
+	background: #111112;
+	color: #f8f8f8;
+	font-weight: bold;
+}
+
+.editor_area {
+	height: 100%;
+	border: 2px solid #484848;
+	border-radius: 15px;
+	padding: 0;
+	margin: 0;
+	background: #181819;
+	box-shadow: 0 0 5px #000;
+	display: grid;
+	grid-template-columns: 1fr 300px;
+}
+	.editor_area > div {
+		padding: 15px;
+		border-left: 2px solid #484848;
+	}
+
+	.editor_area > div:first-child {
+		border-left: none;
+	}
+	
+.image_container {
+	overflow: auto;
+}
+
+	.image {
+		min-height: 10px;
+		min-width: 10px;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	
+	.image > div {
+		border: 1px solid #fff6;
+		overflow: hidden;
+	}
+	
+		.image > div > span {
+			background: #00000066;
+			padding: 3px;
+			display: inline-block;
+		}
+		
+		
+	.image > div.hover {
+		border: 4px solid #0f06;
+		cursor: pointer;
+	}
+		.image > div.hover > span {
+			background: #0f06;
+			padding: 0 3px 3px 0;
+		}
+
+.editor {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+	.large_btn {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border: 2px solid #484848;
+		background: #111112;
+		text-align: center;
+		margin: 0 0 10px;
+		cursor: pointer;
+	}
+	
+	.editor .title {
+		display: block;
+		padding: 4px;
+		border: 2px solid #484848;
+		text-align: center;
+		margin: 5px 0;
+		cursor: pointer;
+	}
+
+	.editor span {
+		display: inline-block;
+		width: 120px;
+		margin: 0 0 5px;
+	}
+	
+	.editor input {
+		width: calc(100% - 120px);
+		margin: 0 0 5px;
+	}
+	.editor input.full {
+		width: 100%;
+	}
+
+.export_field {
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	resize: none;
+}
+
+input, textarea {
+	border: 2px solid #484848;
+	background: #111;
+	color: #fff;
+}
+
+#quickSetupModel {
+	width: 275px;
+	position: fixed;
+	right: 30px;
+	top: 30px;
+	bottom: 30px;
+	background: #181819de;
+}
+
+#quickSetupModel .message {
+	position: relative;
+	top: 50%;
+	transform: translate(0, -50%);
+	background: #111112;
+	border: 2px solid #484848;
+	padding: 5px;
+	box-shadow: 0 0px 10px 5px #000;
+}
+
+#quickSetupModel .message .key {
+	display: block;
+	font-size: 5vh;
+}
+
+#quickSetupModel .large_btn {
+	margin: 0;
+	background: #1d1d1e;
+}
