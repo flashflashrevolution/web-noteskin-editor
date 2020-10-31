@@ -44,4 +44,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.docker_meta.outputs.tags }}
+          tags: |
+            ${{ steps.docker_meta.outputs.tags }}
+            flashflashrevolution/web-noteskin-editor:latest
