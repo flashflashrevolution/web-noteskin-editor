@@ -20,7 +20,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ${{ github.repository }}/web-noteskin-editor
+          images: ${{ github.repository }}
           tag-sha: true
           tag-match-latest: false
       -
