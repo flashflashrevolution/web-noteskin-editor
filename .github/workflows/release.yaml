@@ -16,10 +16,9 @@ jobs:
       -
         name: Docker meta
         id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
+        uses: crazy-max/ghaction-docker-meta@tag-match-latest
         with:
           images: ghcr.io/${{ github.repository }}
-          tag-match: v(.*)
           tag-sha: true
           tag-match-latest: false
       -
@@ -41,5 +40,5 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: true
+          push: false
           tags: ${{ steps.docker_meta.outputs.tags }}
