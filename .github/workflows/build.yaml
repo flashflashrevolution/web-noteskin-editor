@@ -21,7 +21,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ${{ github.repository }}
+          images: ghcr.io/${{ github.repository }}
           tag-sha: true
       -
         name: Set up QEMU
@@ -44,6 +44,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
-          tags: |
-            ${{ steps.docker_meta.outputs.tags }}
-            flashflashrevolution/web-noteskin-editor:latest
+          tags: ${{ steps.docker_meta.outputs.tags }}
