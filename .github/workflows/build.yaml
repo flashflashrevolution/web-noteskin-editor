@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build Docker Image
 
 on:
   push:
@@ -17,8 +17,6 @@ jobs:
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-          repository: ${{ github.repository }}/release
-          registry: docker.pkg.github.com
-          tag_with_ref: true
+          repository: ${{ github.repository }}/web-noteskin-editor
+          registry: ghcr.io
           tag_with_sha: true
-          tags: latest
