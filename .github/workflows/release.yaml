@@ -18,7 +18,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: flashflashrevolution/web-noteskin-editor
+          images: ${{ github.repository }}
           tag-match: v(.*)
           tag-sha: true
           tag-match-latest: false
@@ -43,4 +43,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
-          labels: ${{ steps.docker_meta.outputs.labels }}
